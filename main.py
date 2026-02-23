@@ -2,20 +2,16 @@
 # Channel: https://t.me/itsSmartDev
 
 # Pyrogram setup
-API_ID = "33921382"  # Replace this API ID with your actual API ID
-API_HASH = "aeb354297be3df97641017bf400c3acc"  # Replace this API HASH with your actual API HASH
-SESSION_STRING = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"  # Replace this SESSION STRING with your actual SESSION_STRING
-BOT_TOKEN = "8452220330:AAG3zTNNT9W--3WL4EcMlaRb5oMv_pOMM18"  # Replace this BOT_TOKEN
+API_ID = 33921382  # Your API ID
+API_HASH = "aeb354297be3df97641017bf400c3acc"  # Your API HASH
+BOT_TOKEN = "8452220330:AAG3zTNNT9W--3WL4EcMlaRb5oMv_pOMM18"  # Your bot token
 
 # Admin IDs
-ADMIN_IDS = [8563280306, 12345678]
+ADMIN_IDS = [8563280306]  # Admin ID updated
 
 # Limits
 DEFAULT_LIMIT = 10000  # Card Scrapping Limit For Everyone
 ADMIN_LIMIT = 50000  # Card Scrapping Limit For Admin
-
-# Copyright (C) @TheSmartBisnu
-# Channel: https://t.me/itsSmartDev
 
 import re
 import os
@@ -33,6 +29,10 @@ bot = Client(
     workers=1000,
     parse_mode=ParseMode.HTML
 )
+
+# Note: SESSION_STRING removed as requested
+# You need to generate a session string and add it here
+SESSION_STRING = ""  # আপনার জেনারেট করা সেশন স্ট্রিং এখানে বসান
 
 user = Client(
     "user_session",
@@ -118,5 +118,8 @@ async def scr_cmd(client, message):
         await client.send_message(message.chat.id, "<b>Sorry Bro ❌ No Credit Card Found</b>")
 
 if __name__ == "__main__":
+    print("🤖 Bot Started Successfully!")
+    print(f"👑 Admin ID: {ADMIN_IDS[0]}")
+    print("✨ Made by @TheSmartBisnu")
     user.start()
     bot.run()
